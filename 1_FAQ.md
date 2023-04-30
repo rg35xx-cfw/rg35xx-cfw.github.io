@@ -28,7 +28,11 @@ not readable/mountable under Windows/Mac. To solve that you need to use one of t
 
 > Q: Can I use a second SDCARD for my roms/bios content?
 
-A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX. Boot batocera and go to ``Settings -> System Settings -> Storage Device`` and change it from ``INTERNAL`` to your second card, e.g. ``SHARE - 25.6G``. Exit the settings menu and the system will indicate you need to reboot to get the changes applied. Go to the menu ``Settings -> Quit -> Restart System`` to reboot. The system will reboot and the second card will be now used for batocera and the folder structure (roms, bios, etc.) will be created. You can now shutdown the console, insert the card on your computer, and copy your bios & roms content.
+A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX and follow these steps:
+  * Boot batocera and go to ``Settings -> System Settings -> Storage Device`` and change it from ``INTERNAL`` to your second card, e.g. ``SHARE - 25.6G``. 
+  * Exit the settings menu and the system will indicate you need to reboot to get the changes applied. 
+  * Go to the menu ``Settings -> Quit -> Restart System`` to reboot. The system will reboot and the second card will be now used for batocera and the folder structure (roms, bios, etc.) will be created. 
+  * You can now shutdown the console, insert the card on your computer, and copy your bios & roms content.
 
 ---
 
