@@ -30,9 +30,11 @@ not readable/mountable under Windows/Mac. To solve that you need to use one of t
 
 A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX. Boot the 
 
+---
+
 > Q> I have Garlic with my roms/bios on the second SDCARD. Is it possible to reuse that card for Batocera?
 
-A: By default batocera expects a different name for the roms folders and its location, but thanks to @XQuader there's a script that creates the compatible configuration for batocera based on the Garlic structure. 
+A: By default batocera expects a different name for the roms folders and its location, but thanks to @XQuader there's a script that creates the compatible configuration for batocera based on the Garlic structure. You can read more about it on [this Reddit post](https://www.reddit.com/r/RG35XX/comments/12zxs8t/how_to_get_garlicos_roms_folders_working_in/)
 
 ---
 
