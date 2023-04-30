@@ -21,7 +21,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console.","headline":"FAQ","url":"http://0.0.0.0:4000/1_FAQ.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=deaa7f6d7e4276d8f2d353f8955c632b0b90db29">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7e59d19eee4912bb597ed3b389513fbf74cdf663">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -55,8 +55,12 @@
       <div id="header">
         <nav>
           <ul>
-            <li class="fork"><a href="https://github.com/rg35xx-cfw/rg35xx-cfw.github.io">View On GitHub</a></li>
+            <li class="title"><a href="/">Home</a></li>
+            <li class="title"><a href="https://github.com/rg35xx-cfw/rg35xx-cfw.github.io/releases/latest">Latest Release</a></li>
+            <li class="title"><a href="https://github.com/rg35xx-cfw/">GitHub</a></li>
             
+            <!-- <li class="fork"><a href="https://github.com/rg35xx-cfw/rg35xx-cfw.github.io">View On GitHub</a></li> -->
+            <!--  -->
           </ul>
         </nav>
       </div><!-- end header -->
@@ -68,10 +72,9 @@
           <h1>Batocera for RG35XX</h1>
           <p>These pages describe the installation of a custom firmware (CFW) based on <a href="https://batocera.org">Batocera Linux</a> for the Anbernic RG35XX console. </p>
           <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/rg35xx-cfw">rg35xx-cfw</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+          <!-- <span class="credits left">Project maintained by <a href="https://github.com/rg35xx-cfw">rg35xx-cfw</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span> -->
         </div>
-
         <blockquote>
   <p>Q: I want to add my own roms to the SDCARD but my Windows/Mac computer can’t see the roms partition</p>
 </blockquote>
@@ -103,7 +106,13 @@ on your computer to add your bios/roms or any other content.</li>
   <p>Q: Can I use a second SDCARD for my roms/bios content?</p>
 </blockquote>
 
-<p>A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX. Boot batocera and go to <code class="language-plaintext highlighter-rouge">Settings -&gt; System Settings -&gt; Storage Device</code> and change it from <code class="language-plaintext highlighter-rouge">INTERNAL</code> to your second card, e.g. <code class="language-plaintext highlighter-rouge">SHARE - 25.6G</code>. Exit the settings menu and the system will indicate you need to reboot to get the changes applied. Go to the menu <code class="language-plaintext highlighter-rouge">Settings -&gt; Quit -&gt; Restart System</code> to reboot. The system will reboot and the second card will be now used for batocera and the folder structure (roms, bios, etc.) will be created. You can now shutdown the console, insert the card on your computer, and copy your bios &amp; roms content.</p>
+<p>A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX and follow these steps:</p>
+<ul>
+  <li>Boot batocera and go to <code class="language-plaintext highlighter-rouge">Settings -&gt; System Settings -&gt; Storage Device</code> and change it from <code class="language-plaintext highlighter-rouge">INTERNAL</code> to your second card, e.g. <code class="language-plaintext highlighter-rouge">SHARE - 25.6G</code>.</li>
+  <li>Exit the settings menu and the system will indicate you need to reboot to get the changes applied.</li>
+  <li>Go to the menu <code class="language-plaintext highlighter-rouge">Settings -&gt; Quit -&gt; Restart System</code> to reboot. The system will reboot and the second card will be now used for batocera and the folder structure (roms, bios, etc.) will be created.</li>
+  <li>You can now shutdown the console, insert the card on your computer, and copy your bios &amp; roms content.</li>
+</ul>
 
 <hr />
 
@@ -147,7 +156,6 @@ on your computer to add your bios/roms or any other content.</li>
   <li>Delete the file <code class="language-plaintext highlighter-rouge">boot/batocera</code> (you can make a backup of this file on your computer in case you want to revert to the previous version)</li>
   <li>Copy the contents of the extracted boot.tar.xz to the SDCARD</li>
 </ul>
-
 
       </section>
 

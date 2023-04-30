@@ -4,6 +4,7 @@ category: Getting Started
 order: 2
 label: draft
 ---
+# Installation
 
 ## Installation from scratch
 
