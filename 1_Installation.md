@@ -1,7 +1,7 @@
 ---
 title: Installation
 category: Getting Started
-order: 1
+order: 2
 label: draft
 ---
 

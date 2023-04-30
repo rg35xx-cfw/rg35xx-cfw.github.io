@@ -27,6 +27,9 @@ url: "https://rg35xx-cfw.github.io" # the base hostname & protocol for your site
 twitter_username: acmeplus
 github_username:  acmeplus
 
+header_pages:
+  - index.html
+
 # Build settings
 #theme: minima
 remote_theme: pages-themes/midnight@v0.2.0

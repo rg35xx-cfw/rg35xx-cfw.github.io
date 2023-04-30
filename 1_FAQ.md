@@ -1,7 +1,7 @@
 ---
 title: FAQ
 category: General
-order: 1
+order: 3
 label: WIP
 permalink: 
 ---
@@ -26,9 +26,9 @@ not readable/mountable under Windows/Mac. To solve that you need to use one of t
 
 ---
 
-> Q: Can I use a second SDCARD for my roms/biow content?
+> Q: Can I use a second SDCARD for my roms/bios content?
 
-A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX. Boot the 
+A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX. Boot batocera and go to ``Settings -> System Settings -> Storage Device`` and change it from ``INTERNAL`` to your second card, e.g. ``SHARE - 25.6G``. Exit the settings menu and the system will indicate you need to reboot to get the changes applied. Go to the menu ``Settings -> Quit -> Restart System`` to reboot. The system will reboot and the second card will be now used for batocera and the folder structure (roms, bios, etc.) will be created. You can now shutdown the console, insert the card on your computer, and copy your bios & roms content.
 
 ---
 
@@ -58,4 +58,5 @@ A: For most of the releases you can update:
   * Download the boot.tar.xz file from the releases page
   * Extract its content
   * Mount your batocera SDCARD on your PC/Mac/Linux computer
+  * Delete the file ``boot/batocera`` (you can make a backup of this file on your computer in case you want to revert to the previous version)
   * Copy the contents of the extracted boot.tar.xz to the SDCARD
