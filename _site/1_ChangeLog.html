@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Introduction | Batocera for RG35XX</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Introduction" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console." />
+<meta property="og:description" content="These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console." />
+<link rel="canonical" href="http://0.0.0.0:4000/1_ChangeLog.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/1_ChangeLog.html" />
+<meta property="og:site_name" content="Batocera for RG35XX" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Introduction" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console.","headline":"Introduction","url":"http://0.0.0.0:4000/1_ChangeLog.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=7dc30bd2eeb009450262231b09fd182f2438c478">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#353535">
+<meta name="msapplication-navbutton-color" content="#353535">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <ul>
+            <li class="fork"><a href="https://github.com/rg35xx-cfw/rg35xx-cfw.github.io">View On GitHub</a></li>
+            
+          </ul>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Batocera for RG35XX</h1>
+          <p>These pages describe the installation of a custom firmware (CFW) based on <a href="https://batocera.org">Batocera Linux</a> for the Anbernic RG35XX console. </p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/rg35xx-cfw">rg35xx-cfw</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+        </div>
+
+        <p>2023/04/27 - Batocera 37-dev for RG35XX Beta v0.8</p>
+<ul>
+  <li>Moved completely away from X11 graphics. Thanks to the excellent work by @JohnnyOnFlame we now have a GPU fbdev based SDL2 version that performs significantly better</li>
+  <li>As part of this change the tearing issues with refresh have now been solved as he fixed the VSYNC issues</li>
+  <li>Rebased all the changes to be in sync with the latest batocera v37 development branch, so there are several standalone emulators and cores updated</li>
+  <li>Replaced pico8 core retro8 with fake8</li>
+  <li>General performance improvements</li>
+  <li>Solved the audio volume issue. Audio volume should now be consistent across the system, also the audio slide overlay is visible in EmulationStation frontend</li>
+  <li>System charging algorithm has been disabled in this build since it led to more confusion than convenience. However, if you want the system to enter into charging after shutdown delete the file boot/firstBoot from the first partition (BATOCERA)</li>
+</ul>
+
+<p>2023/04/20 - Batocera 36 for RG35XX Beta v0.7</p>
+<ul>
+  <li>First full batocera beta release (no longer lite)</li>
+  <li>Added initial charging logic, it’s now <em>finally</em> possible to charge the device while being powered off:
+    <ul>
+      <li>When the system is powered off but connected to the power it no longer powered off but enters the charging mode.</li>
+      <li>This also happens If your device is powered off but you connected it to power</li>
+      <li>When the system is in charging mode, press power button briefly to boot</li>
+    </ul>
+  </li>
+  <li>Fixed led status (broken in v0.6)</li>
+  <li>Updated external roms folder mount points to allow compatibility with non-batocera structure roms folders. It’s now possible to reuse OFW or GarlicOS sdcard roms and bios folders (Thanks @XQuader for the patch).</li>
+  <li>Fixed internet connection status message (no longer showing <code class="language-plaintext highlighter-rouge">Status Not Connected</code> after a successful connection)</li>
+  <li>Fixed DeSmume and melonDS NDS cores</li>
+  <li>Added support for Space Cadet Pinball port</li>
+  <li>Added eDuke32 port</li>
+  <li>Added libretro-ecwolf</li>
+  <li>Added mame (current) libretto core</li>
+  <li>Added od-commander file browser</li>
+  <li>Enabled scraper content download for all platforms (thanks batocera @nadenislamarre)</li>
+  <li>Earphones detection/audio switching is working (probably fixed in v0.6 but not tested before)</li>
+  <li>Consolidated build system to use batocera standard image</li>
+  <li>Rootfs has not changed to squashfs format. This is due to space savings and to allow updates</li>
+  <li>ADB can now be enabled by switching the kernel. Mount the first partition of the SDCARD on your PC, make a copy of uImage, and copy adb_uImage to uImage. After the system reboots adb will be available.</li>
+  <li>Fixed direct launch into retroarch. Add an empty file to the first partition of the SDCARD named <code class="language-plaintext highlighter-rouge">startRA</code>. The configuration may be missing, so you may need to the <code class="language-plaintext highlighter-rouge">retroarch.cfg</code> below to the <code class="language-plaintext highlighter-rouge">/userdata/system/.config/retroarch/retroarch.cfg</code> (via network or mounting the second partition of the SDCARD)</li>
+</ul>
+
+<p>2023/04/12 - Batocera Lite for RG35XX Test Release Alpha 0.6</p>
+<ul>
+  <li>Updated bootloader and uboot for latest board revisions compatibility</li>
+  <li>By default the installation has the 2600mAh battery curve, but there’s also a 2100mAh battery curve in the first partition
+    <ul>
+      <li>If you have a 2100mAh battery, insert the sdcard on your computer, move the file <code class="language-plaintext highlighter-rouge">kernel.dtb</code> to <code class="language-plaintext highlighter-rouge">2600mAh-gpu.dtb</code>, and copy the file <code class="language-plaintext highlighter-rouge">2100mAh-gpu.dtb</code> to <code class="language-plaintext highlighter-rouge">kernel.dtb</code></li>
+    </ul>
+  </li>
+  <li>Updated the kernel to include overclock/underclock support.
+    <ul>
+      <li>By default the frequency is set to 1008 MHz (same as previous releases) but it’s possible to choose 5 levels of under/overclock: Powersave (240 MHz), Low (720 MHz), None (1008 MHz), High (1200 MHz), Turbo (1392 MHz) and Extreme (1488 MHz).</li>
+      <li>To change the clock frequency, open batocera <code class="language-plaintext highlighter-rouge">Settings -&gt; System Settings -&gt; Overclock</code> and select the desired frequency.</li>
+      <li>When you exit the menu batocera will indicate that you need to reboot for the changes to be applied, but you can ignore that message. The selected frequency will be applied and saved in the configuration for the next boot.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2023/04/11 - Batocera Lite for RG35XX Test Release Alpha 0.5</p>
+<ul>
+  <li>Fixed menu hotkeys not working on retroarch, it’s now possible to access the menu by selecting <code class="language-plaintext highlighter-rouge">MENU</code> + <code class="language-plaintext highlighter-rouge">B</code></li>
+  <li>Fixed GL shaders, selecting the shaders in batocera EmulationStation options should work (e.g. <code class="language-plaintext highlighter-rouge">GAME RENDERING &amp; SHADERS -&gt; SHADER SET -&gt; ZFAST</code></li>
+  <li>Virtual memory has been enabled again, this should help to avoid some crashes in some games</li>
+</ul>
+
+<p>2023/04/10 - Batocera Lite for RG35XX Test Release Alpha 0.4</p>
+<ul>
+  <li>Build is now based on full batocera build</li>
+  <li>EmulationStation menus to select core should now work:
+    <ul>
+      <li>To change it for a full system: Select a system and press <code class="language-plaintext highlighter-rouge">SELECT</code>, <code class="language-plaintext highlighter-rouge">ADVANCED SYSTEM OPTIONS</code>, <code class="language-plaintext highlighter-rouge">EMULATOR</code> and set the emulator of your choice</li>
+      <li>For a specific rom, select the rom, then press and keep pressed <code class="language-plaintext highlighter-rouge">B</code>, then <code class="language-plaintext highlighter-rouge">ADVANCED GAME OPTIONS</code>, <code class="language-plaintext highlighter-rouge">EMULATOR</code> and set the emulator of your choice</li>
+    </ul>
+  </li>
+  <li>Note that many core options are now changed in the <code class="language-plaintext highlighter-rouge">ADVANCED SYSTEM</code>/<code class="language-plaintext highlighter-rouge">GAME OPTIONS</code></li>
+  <li>Added multiple ports, all ports should have working controls now (SDLPoP, devolutionx, Cannonball, Sonic1, Sonic2, SonicCD, etc.)</li>
+  <li>Added additional standalone emulators: GSPlus, Hatari, Amiberry Drastic, flycast, OpenBOR, PPSSPP, Mupen64, vice etc.)</li>
+  <li>Updated input driver for compatibility with revisions 6C or lower. Thanks to Dark-Seraph for the gpio driver.</li>
+  <li>USB Ethernet (ASIX based chipsets) and USB Wireless (RTL8192, RTL8188 based chipsets) should now work. Note that usb needs to be plugged after the system boots, and in some cases you need to insert the USB C to USB A adapter first, then connect the Ethernet or Wifi adapter.</li>
+</ul>
+
+<p>2023/03/24 - Batocera Lite for RG35XX Test Release Alpha 0.3</p>
+<ul>
+  <li>SDCard structure now based on regular batocera structure (1st partition contains the system, second partition is for content).
+    <ul>
+      <li>Future system updates can be added by just replacing the some files in the first partition, no need to reflash the SDCARD.</li>
+    </ul>
+  </li>
+  <li>SDCard auto expand: during the first boot the sdcard will expand the second partition to fill the whole sdcard. After that happens batocera populates the required folders for roms, etc.</li>
+  <li>Added virtual memory. It should be possible to run some N64 games now. Note that launching those titles may fail at first, just try again.</li>
+  <li>Fixed motor running all the time in some models (#2)</li>
+  <li>Fixed led status during charging, power on, low battery</li>
+  <li>Fixed power off: Note that only work when the console is not connected to the power (See #8 )</li>
+  <li>Added initial governor support (currently only set on performance, additional work will be tracked in #10)</li>
+  <li>Controls are now configured as a joystick, so it’s possible to navigate the keyboard like interface in Retroarch and EmulationStation search/text entry, etc.</li>
+  <li>External USB controllers work, some may need configuration. Note that at this point batocera control mappings are ignored, so you need to configure secondary controls in retroarch.</li>
+</ul>
+
+<p>2023/03/16 - Batocera Lite for RG35XX Test Release Alpha 0.2</p>
+<ul>
+  <li>First batocera lite build</li>
+  <li>Power button now works (although it may restart in some cases)</li>
+  <li>Volume controls work</li>
+  <li>Brightness controls work with MENU + Volume +/Volume -</li>
+  <li>It’s possible to switch to RetroArch boot (instead of emulationstation) by adding a file named startRA at the top of the second sdcard. Remove the file to boot again into EmulationStation.</li>
+</ul>
+
+<p>2023/03/13 - RetroArch (GPU enabled for RG35XX Test Release Alpha 0.1</p>
+<ul>
+  <li>First Test Alpha release</li>
+</ul>
+
+
+      </section>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>FAQ | Batocera for RG35XX</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="FAQ" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console." />
+<meta property="og:description" content="These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console." />
+<link rel="canonical" href="http://0.0.0.0:4000/1_FAQ.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/1_FAQ.html" />
+<meta property="og:site_name" content="Batocera for RG35XX" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="FAQ" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console.","headline":"FAQ","url":"http://0.0.0.0:4000/1_FAQ.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=7dc30bd2eeb009450262231b09fd182f2438c478">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/assets/js/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/assets/css/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#353535">
+<meta name="msapplication-navbutton-color" content="#353535">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <ul>
+            <li class="fork"><a href="https://github.com/rg35xx-cfw/rg35xx-cfw.github.io">View On GitHub</a></li>
+            
+          </ul>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Batocera for RG35XX</h1>
+          <p>These pages describe the installation of a custom firmware (CFW) based on <a href="https://batocera.org">Batocera Linux</a> for the Anbernic RG35XX console. </p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/rg35xx-cfw">rg35xx-cfw</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+        </div>
+
+        <blockquote>
+  <p>Q: I want to add my own roms to the SDCARD but my Windows/Mac computer can’t see the roms partition</p>
+</blockquote>
+
+<p>A: By default batocera formats the second partition with Linux EXT4 file format. That format is typically
+not readable/mountable under Windows/Mac. To solve that you need to use one of the following approaches:</p>
+<ul>
+  <li>Use Paragon EXTFS for Windows/Mac. This tool is not free but it’s highly recommended since it allows seamless 
+ access to EXT2/3/4</li>
+  <li>Use DiskGenius on Windows. Not recommended. DiskGenius performs badly and tends to corrupt the partition and its content</li>
+  <li>Format the second partition as FAT32:
+    <ul>
+      <li>Insert the SDCARD on your PC/MAC</li>
+      <li>On Windows, open the partition tool and erase/format the second partition (SHARE) as FAT32</li>
+      <li>On Mac, unfortunately you will need use the command line to completely reformat the partition. Open Disk Utility and note the 
+disk number and partition of your usb (e.g. disk4s2). Open a terminal and reformat the partition with the following command:
+<code class="language-plaintext highlighter-rouge">sudo diskutil eraseVolume ms-dos SHARE /dev/disk4s2</code></li>
+      <li>Eject the SDCARD from your computer and insert it again on the RG35XX</li>
+      <li>Power the device on</li>
+      <li>Batocera will re-populate the partition with the correct contents. After the system boots you can power it off and insert the sdcard
+on your computer to add your bios/roms or any other content.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p>Q: Can I use a second SDCARD for my roms/biow content?</p>
+</blockquote>
+
+<p>A: Yes! if you have a new or empty SDCARD you can insert the SDCARD on the second slot of the RG35XX. Boot the</p>
+
+<blockquote>
+  <p>Q&gt; I have Garlic with my roms/bios on the second SDCARD. Is it possible to reuse that card for Batocera?</p>
+</blockquote>
+
+<p>A: By default batocera expects a different name for the roms folders and its location, but thanks to @XQuader there’s a script that creates the compatible configuration for batocera based on the Garlic structure.</p>
+
+<hr />
+
+<blockquote>
+  <p>Q: The installation seems to be running, I can see it’s expanding the partition but it’s taking too long</p>
+</blockquote>
+
+<p>A: Expanding and booting the first time with a 64GB SDCARD takes about 1 to 1:30 minutes. If your SDCARD is larger it may take much longer, however if it goes beyond 5 minutes chances are that something didn’t go well. Just press reset and the system will continue. If that’s the case the partition may have not been expanded. For that you will need to manually expand the card on your PC/Mac/Linux.</p>
+
+<hr />
+
+<blockquote>
+  <p>Q: I’ve installed/updated to the latest version and I don’t have audio, or my controls don’t respond, or something else is not working as expected:</p>
+</blockquote>
+
+<p>A: If you have updated from an older version you may need to copy the <code class="language-plaintext highlighter-rouge">batocera.conf</code> from the releases page to your SDCARD:</p>
+<ul>
+  <li>If you use one single SDCARD, mount the second partition on your PC/Mac/Linux (<code class="language-plaintext highlighter-rouge">SHARE</code>) and copy the file to <code class="language-plaintext highlighter-rouge">system/batocera.conf</code></li>
+  <li>If you use two SDCARDs, mount the second SDCARD on your PC/Mac/Linux and copy the file to <code class="language-plaintext highlighter-rouge">system/batocera.conf</code></li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p>Q: Do I have to flash every release or can I update?</p>
+</blockquote>
+
+<p>A: For most of the releases you can update:</p>
+<ul>
+  <li>Download the boot.tar.xz file from the releases page</li>
+  <li>Extract its content</li>
+  <li>Mount your batocera SDCARD on your PC/Mac/Linux computer</li>
+  <li>Copy the contents of the extracted boot.tar.xz to the SDCARD</li>
+</ul>
+
+
+      </section>
+
+    </div>
+  </body>
+</html>
