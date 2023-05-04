@@ -64,3 +64,11 @@ A: For most of the releases you can update:
   * Mount your batocera SDCARD on your PC/Mac/Linux computer
   * Delete the file ``boot/batocera`` (you can make a backup of this file on your computer in case you want to revert to the previous version)
   * Copy the contents of the extracted boot.tar.xz to the SDCARD
+
+---
+
+> Q: I am trying to run NDS roms but when trying to launch them the console returns to emulationstaion. Is it possible to use Drastic?
+
+A: Currently Drastic is the best emulator for NDS roms. However it's not working to launch roms directly from the NDS roms menu. See [this issue in Github](https://github.com/rg35xx-cfw/rg35xx-cfw.github.io/issues/25#issuecomment-1526845570) to see how to add drastic to launch from the ports menu. Once the script is added to roms/ports, you can launch the standalone drastic emulator, and then navigate to ``/userdata/roms/nds`` to find your roms. Note that roms need to be uncompressed in .nds format.
+Both desmume and melonds run but the performance is not very good compared with Drastic.
+

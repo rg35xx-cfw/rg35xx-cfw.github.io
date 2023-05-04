@@ -21,7 +21,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"These pages describe the installation of a custom firmware (CFW) based on Batocera Linux for the Anbernic RG35XX console.","headline":"FAQ","url":"http://0.0.0.0:4000/1_FAQ.html"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=1f607eb134087c854ad31974d2dd4c06e736d2e8">
+    <link rel="stylesheet" href="/assets/css/style.css?v=be59bd157398c94068312105f8d4031018ae2c26">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="/assets/js/respond.js"></script>
     <!--[if lt IE 9]>
@@ -156,6 +156,16 @@ on your computer to add your bios/roms or any other content.</li>
   <li>Delete the file <code class="language-plaintext highlighter-rouge">boot/batocera</code> (you can make a backup of this file on your computer in case you want to revert to the previous version)</li>
   <li>Copy the contents of the extracted boot.tar.xz to the SDCARD</li>
 </ul>
+
+<hr />
+
+<blockquote>
+  <p>Q: I am trying to run NDS roms but when trying to launch them the console returns to emulationstaion. Is it possible to use Drastic?</p>
+</blockquote>
+
+<p>A: Currently Drastic is the best emulator for NDS roms. However it’s not working to launch roms directly from the NDS roms menu. See <a href="https://github.com/rg35xx-cfw/rg35xx-cfw.github.io/issues/25#issuecomment-1526845570">this issue in Github</a> to see how to add drastic to launch from the ports menu. Once the script is added to roms/ports, you can launch the standalone drastic emulator, and then navigate to <code class="language-plaintext highlighter-rouge">/userdata/roms/nds</code> to find your roms. Note that roms need to be uncompressed in .nds format.
+Both desmume and melonds run but the performance is not very good compared with Drastic.</p>
+
 
       </section>
 
